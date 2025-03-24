@@ -1,0 +1,845 @@
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>南通办详情</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>南通办 - 客户详情</h3>
+        <input type="text" id="searchClient" placeholder="搜索订购商" onkeyup="filterTable()">
+        <input type="text" id="searchSalesman" placeholder="搜索业务员" onkeyup="filterTable()">
+        <button onclick="exportTableToCSV('南通办_details.csv')">导出数据</button>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>订购商</th>
+                    <th>客户分类</th>
+                    <th>部门</th>
+                    <th>业务员</th>
+                    <th>最后交易时间</th>
+                    <th>最后交易时间间隔</th>
+                    <th>上月吨数</th>
+                    <th>本年吨数</th>
+                    <th>去年吨数</th>
+                    <th>近期采购品种</th>
+                    <th>采购最多品种</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td>南通永尚纺织</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-10-18</td>
+                <td>157天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>136.0吨</td>
+                <td>"数智全棉梭织普梳紧密32支, 建发全棉梭织普梳32支"</td>
+                <td>"数智全棉梭织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>常州品硕纺织品有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2025-02-11</td>
+                <td>41天</td>
+                <td>9.3吨</td>
+                <td>52.0吨</td>
+                <td>126.7吨</td>
+                <td>"东国全棉梭织普梳21支"</td>
+                <td>"卡哈全棉针织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴传瑾纺织品有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-10</td>
+                <td>104天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>115.2吨</td>
+                <td>"东国全棉梭织普梳21支, 福锦全棉针织普梳32支包漂白"</td>
+                <td>"全棉梭织普梳气流纺10支包漂"</td>
+            </tr>
+        
+            <tr>
+                <td>宁波信伟达进出口有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-11-11</td>
+                <td>133天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>117.7吨</td>
+                <td>"兰江全棉针织普梳32支包漂白"</td>
+                <td>"全棉针织精梳32支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江泛中供应链管理有限公司</td>
+                <td>头部客户</td>
+                <td>本部棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-02-19</td>
+                <td>33天</td>
+                <td>5.0吨</td>
+                <td>8.0吨</td>
+                <td>135.2吨</td>
+                <td>"辣妈全棉针织精梳紧密32支包漂白, 全棉针织精梳紧密32支, 宝龙全棉针织普梳32支包漂白"</td>
+                <td>"港务全棉梭织普梳40支"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州胜雄纺织有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-10-21</td>
+                <td>154天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>6.8吨</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂, 加力士全棉梭织普梳赛络纺10支, 全棉梭织普梳21支"</td>
+                <td>"全棉梭织普梳21支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江富业供应链管理有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-10-08</td>
+                <td>167天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>20.0吨</td>
+                <td>"兰江全棉针织普梳32支包漂白, 宝龙全棉针织普梳32支包漂白, 全棉针织普梳32支包漂白"</td>
+                <td>"全棉针织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州琛彤纺织品有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-01-05</td>
+                <td>78天</td>
+                <td>0.0吨</td>
+                <td>1.3吨</td>
+                <td>183.2吨</td>
+                <td>"越升涤棉针织紧密32支包漂CVC60/40, 飞荣全棉针织普梳紧密32支包漂白"</td>
+                <td>"港务全棉梭织普梳40支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴艾柯丝纺织品有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-27</td>
+                <td>87天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>28.2吨</td>
+                <td>"顺化涤棉针织普梳30支CVC60/40包漂白, 辣妈全棉针织精梳紧密32支包漂白"</td>
+                <td>"全棉针织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江恒孚贸易有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-24</td>
+                <td>90天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>411.5吨</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白, 福创涤棉针织普梳32支CVC60/40包漂白, 宝龙全棉针织普梳32支包漂白, 棉足珍混纺纱32支"</td>
+                <td>"福创涤棉针织普梳32支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>萧邦针织</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-02-10</td>
+                <td>42天</td>
+                <td>5.0吨</td>
+                <td>12.7吨</td>
+                <td>138.5吨</td>
+                <td>"辣妈全棉针织精梳紧密32支包漂白"</td>
+                <td>"数智全棉针织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴柯桥美通贸易有限公司</td>
+                <td>普通客户</td>
+                <td>本部棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-11-29</td>
+                <td>115天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>52.3吨</td>
+                <td>"宝龙全棉针织普梳32支包漂白"</td>
+                <td>"宝龙全棉针织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴九田服饰有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-24</td>
+                <td>90天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>74.3吨</td>
+                <td>"港务全棉针织精梳紧密40支, 奥特曼全棉针织精梳紧密32支"</td>
+                <td>"奥特曼全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴柯桥鑫磊贸易有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-31</td>
+                <td>83天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>10.6吨</td>
+                <td>"顺化涤棉针织普梳30支CVC60/40包漂白, 棉足珍涤棉针织普梳26支CVC60/40, 福山涤棉针织普梳32支CVC60/40包漂白"</td>
+                <td>"棉足珍涤棉针织普梳26支CVC60/40"</td>
+            </tr>
+        
+            <tr>
+                <td>江西易享达贸易有限公司</td>
+                <td>腰部客户</td>
+                <td>本部棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-28</td>
+                <td>86天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>67.9吨</td>
+                <td>"全棉针织精梳紧密32支, 三叉戟全棉针织精梳紧密32支"</td>
+                <td>"三叉戟全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>宁波凯越物产有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-28</td>
+                <td>86天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>111.3吨</td>
+                <td>"飞荣全棉针织普梳紧密32支包漂白"</td>
+                <td>"飞荣全棉针织普梳紧密32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>金宝莱（宝达针织）</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-26</td>
+                <td>88天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>49.5吨</td>
+                <td>"辣妈全棉针织精梳紧密32支包漂白"</td>
+                <td>"辣妈全棉针织精梳紧密32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>日辉纺织（织能小师傅）</td>
+                <td>普通客户</td>
+                <td>南通办代理</td>
+                <td>许书沛</td>
+                <td>2024-12-31</td>
+                <td>83天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>63.0吨</td>
+                <td>"建发全棉针织高配紧密26支, 华孚全棉针织高配紧密26支, 金加力士全棉梭织普梳赛络纺10支包漂"</td>
+                <td>"华孚全棉针织高配紧密26支"</td>
+            </tr>
+        
+            <tr>
+                <td>常州诺安纺织有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-11-04</td>
+                <td>140天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>75.7吨</td>
+                <td>"东国全棉梭织普梳21支, 万利源全棉针织精梳紧密40支, 数智全棉梭织普梳紧密32支"</td>
+                <td>"大山全棉梭织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴美旋纺织有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-10-19</td>
+                <td>156天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>4.3吨</td>
+                <td>"富豪涤棉针织普梳21支CVC60/40包漂白, 全棉针织精梳紧密21支, 莲花全棉针织精梳紧密32支"</td>
+                <td>"富豪涤棉针织普梳21支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州宏华纺织有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-31</td>
+                <td>83天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>46.7吨</td>
+                <td>"富豪涤棉针织普梳21支CVC60/40包漂白, 辣妈全棉针织精梳紧密32支包漂白, 长富涤棉针织普梳32支CVC60/40包漂白"</td>
+                <td>"富豪涤棉针织普梳21支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江赐源纺织有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2024-11-26</td>
+                <td>118天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>104.0吨</td>
+                <td>"华孚全棉针织普梳高配紧密40支, 海成全棉梭织普梳气流纺21支"</td>
+                <td>"海成全棉梭织普梳气流纺21支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江鑫海纺织有限公司</td>
+                <td>腰部客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2024-10-19</td>
+                <td>156天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>84.0吨</td>
+                <td>"盈盛数智全棉梭织普梳紧密32支, 数智全棉梭织普梳紧密32支"</td>
+                <td>"数智全棉梭织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州萧山晨晨针织厂</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>王刚</td>
+                <td>2024-09-27</td>
+                <td>178天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>5.4吨</td>
+                <td>"丝丽雅粘胶纱40支"</td>
+                <td>"丝丽雅粘胶纱40支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江天骏纺织有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2024-11-25</td>
+                <td>119天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>61.5吨</td>
+                <td>"数智全棉梭织普梳紧密32支, 盈盛数智全棉梭织普梳紧密32支"</td>
+                <td>"数智全棉梭织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴赟鹏纺织品有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-10-28</td>
+                <td>147天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>48.7吨</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂, 加力士全棉梭织普梳赛络纺10支"</td>
+                <td>"加力士全棉梭织普梳赛络纺10支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江亦成纺织品有限公司</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2025-01-04</td>
+                <td>79天</td>
+                <td>0.0吨</td>
+                <td>14.9吨</td>
+                <td>136.0吨</td>
+                <td>"成功全棉梭织普梳32支包漂白"</td>
+                <td>"数智全棉梭织普梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴守诺纺织品有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>王刚</td>
+                <td>2024-09-25</td>
+                <td>180天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.5吨</td>
+                <td>"华孚全棉针织普梳紧密32支, 莲花全棉针织精梳紧密32支"</td>
+                <td>"莲花全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>曾新国</td>
+                <td>长尾客户</td>
+                <td>本部棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-10-26</td>
+                <td>149天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.1吨</td>
+                <td>"莲花全棉针织精梳紧密26支, 华孚全棉针织普梳紧密32支"</td>
+                <td>"莲花全棉针织精梳紧密26支"</td>
+            </tr>
+        
+            <tr>
+                <td>南通甘宇纺织有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-09-29</td>
+                <td>176天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>19.4吨</td>
+                <td>"数智全棉梭织普梳紧密40支"</td>
+                <td>"数智全棉梭织普梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>江苏福茂供应链管理有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2025-02-21</td>
+                <td>31天</td>
+                <td>12.5吨</td>
+                <td>18.3吨</td>
+                <td>48.3吨</td>
+                <td>"鑫聚盛OE 7, 鑫聚盛全棉梭织普梳气流纺10支"</td>
+                <td>"数智全棉梭织普梳紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴柯桥长阳针纺织有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-11-29</td>
+                <td>115天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>16.4吨</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白"</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州黄锦纺织有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-11-04</td>
+                <td>140天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.8吨</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂"</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江欧罗针织有限公司</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>王刚</td>
+                <td>2024-10-16</td>
+                <td>159天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.5吨</td>
+                <td>"华孚全棉针织普梳高配紧密40支"</td>
+                <td>"华孚全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴莫加戴贸易有限公司</td>
+                <td>新客户</td>
+                <td>潮汕办</td>
+                <td>王刚</td>
+                <td>2024-10-18</td>
+                <td>157天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.2吨</td>
+                <td>"华孚全棉针织普梳高配紧密40支"</td>
+                <td>"华孚全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>东辰纺织</td>
+                <td>头部客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-02-17</td>
+                <td>35天</td>
+                <td>15.8吨</td>
+                <td>15.8吨</td>
+                <td>156.9吨</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白, 飞荣全棉针织普梳紧密32支包漂白"</td>
+                <td>"福皇全棉针织普梳紧密32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴市以乐针纺织品有限公司</td>
+                <td>长尾客户</td>
+                <td>南通办代理</td>
+                <td>王刚</td>
+                <td>2024-11-02</td>
+                <td>142天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>10.0吨</td>
+                <td>"棉足珍全棉梭织普梳紧密32支, 飞荣全棉针织普梳紧密32支包漂白"</td>
+                <td>"飞荣全棉针织普梳紧密32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴朝联纺织品有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-10-26</td>
+                <td>149天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>"越升涤棉针织紧密32支包漂CVC60/40"</td>
+                <td>"越升涤棉针织紧密32支包漂CVC60/40"</td>
+            </tr>
+        
+            <tr>
+                <td>宁波旭泽丰贸易有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-01-16</td>
+                <td>67天</td>
+                <td>0.0吨</td>
+                <td>2.8吨</td>
+                <td>30.2吨</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白"</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴市宏欧针纺有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-11-06</td>
+                <td>138天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.2吨</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂"</td>
+                <td>"金加力士全棉梭织普梳赛络纺10支包漂"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴融思纺织品有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-11-13</td>
+                <td>131天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.2吨</td>
+                <td>"宝龙全棉针织普梳32支包漂白"</td>
+                <td>"宝龙全棉针织普梳32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>杭州敏畅纺织有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-16</td>
+                <td>98天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>15.6吨</td>
+                <td>"华孚全棉针织高配紧密26支, 华孚全棉针织普梳高配紧密40支"</td>
+                <td>"华孚全棉针织普梳高配紧密40支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴睿久纺织品有限公司</td>
+                <td>长尾客户</td>
+                <td>南通办代理</td>
+                <td>许书沛</td>
+                <td>2024-11-28</td>
+                <td>116天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>2.5吨</td>
+                <td>"数智全棉针织精梳紧密赛络纺40支"</td>
+                <td>"数智全棉针织精梳紧密赛络纺40支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴隆艺针纺有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2024-12-21</td>
+                <td>93天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>17.6吨</td>
+                <td>"长富涤棉针织普梳32支CVC60/40包漂白, 富豪涤棉针织普梳21支CVC60/40包漂白"</td>
+                <td>"富豪涤棉针织普梳21支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>宁波利纤贸易有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2024-12-05</td>
+                <td>109天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>21.9吨</td>
+                <td>"富豪涤棉针织普梳26支CVC60/40包漂白"</td>
+                <td>"富豪涤棉针织普梳26支CVC60/40包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>珊琳纺织</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>王刚</td>
+                <td>2024-12-31</td>
+                <td>83天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>1.1吨</td>
+                <td>"港务全棉针织精梳紧密40支, 数智全棉针织精梳紧密32支"</td>
+                <td>"数智全棉针织精梳紧密32支"</td>
+            </tr>
+        
+            <tr>
+                <td>常州市赛冠纺织品有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2024-12-14</td>
+                <td>100天</td>
+                <td>0.0吨</td>
+                <td>0.0吨</td>
+                <td>2.5吨</td>
+                <td>"鑫聚盛全棉梭织普梳气流纺10支"</td>
+                <td>"鑫聚盛全棉梭织普梳气流纺10支"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴智辉针纺有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>王刚</td>
+                <td>2025-02-13</td>
+                <td>39天</td>
+                <td>0.9吨</td>
+                <td>5.9吨</td>
+                <td>6.0吨</td>
+                <td>"飞荣全棉针织普梳紧密32支包漂白"</td>
+                <td>"飞荣全棉针织普梳紧密32支包漂白"</td>
+            </tr>
+        
+            <tr>
+                <td>南通楠安纺织有限公司</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>刘俊杰</td>
+                <td>2025-01-22</td>
+                <td>61天</td>
+                <td>0.0吨</td>
+                <td>16.3吨</td>
+                <td>1.0吨</td>
+                <td>"东国全棉梭织普梳21支, 飞荣全棉针织普梳紧密32支包漂白, 越升涤棉针织紧密32支包漂CVC60/40"</td>
+                <td>"东国全棉梭织普梳21支"</td>
+            </tr>
+        
+            <tr>
+                <td>浙江京舟纺织科技有限公司</td>
+                <td>普通客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2025-02-10</td>
+                <td>42天</td>
+                <td>13.5吨</td>
+                <td>54.8吨</td>
+                <td>0.0吨</td>
+                <td>"鑫聚盛OE 7"</td>
+                <td>"鑫聚盛OE 7"</td>
+            </tr>
+        
+            <tr>
+                <td>徐州经纬纺织</td>
+                <td>长尾客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2025-02-15</td>
+                <td>37天</td>
+                <td>13.0吨</td>
+                <td>17.1吨</td>
+                <td>0.0吨</td>
+                <td>"鑫聚盛OE 7, 鑫聚盛全棉梭织普梳气流纺10支"</td>
+                <td>"鑫聚盛OE 7"</td>
+            </tr>
+        
+            <tr>
+                <td>绍兴福加针织有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>许书沛</td>
+                <td>2025-02-11</td>
+                <td>41天</td>
+                <td>3.3吨</td>
+                <td>3.3吨</td>
+                <td>0.0吨</td>
+                <td>"越升涤棉针织紧密32支包漂CVC60/40"</td>
+                <td>"越升涤棉针织紧密32支包漂CVC60/40"</td>
+            </tr>
+        
+            <tr>
+                <td>江苏同裕供应链管理有限公司</td>
+                <td>新客户</td>
+                <td>南通棉纱部</td>
+                <td>梁涛</td>
+                <td>2025-02-18</td>
+                <td>34天</td>
+                <td>3.0吨</td>
+                <td>3.0吨</td>
+                <td>0.0吨</td>
+                <td>"鑫聚盛全棉梭织普梳气流纺10支"</td>
+                <td>"鑫聚盛全棉梭织普梳气流纺10支"</td>
+            </tr>
+        
+            </tbody>
+        </table>
+        <script>
+            function filterTable() {
+                var clientInput = document.getElementById("searchClient").value.toLowerCase();
+                var salesmanInput = document.getElementById("searchSalesman").value.toLowerCase();
+                var table = document.getElementById("data-table");
+                var tr = table.getElementsByTagName("tr");
+
+                for (var i = 1; i < tr.length; i++) {
+                    var tdClient = tr[i].getElementsByTagName("td")[0];
+                    var tdSalesman = tr[i].getElementsByTagName("td")[3];
+                    if (tdClient && tdSalesman) {
+                        var clientText = tdClient.textContent || tdClient.innerText;
+                        var salesmanText = tdSalesman.textContent || tdSalesman.innerText;
+                        if (clientText.toLowerCase().indexOf(clientInput) > -1 && 
+                            salesmanText.toLowerCase().indexOf(salesmanInput) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }       
+                }
+            }
+
+            function downloadCSV(csv, filename) {
+                var csvFile;
+                var downloadLink;
+
+                csvFile = new Blob([csv], {type: "text/csv"});
+                downloadLink = document.createElement("a");
+                downloadLink.download = filename;
+                downloadLink.href = window.URL.createObjectURL(csvFile);
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+            }
+
+            function exportTableToCSV(filename) {
+                var csv = [];
+                var rows = document.querySelectorAll("table tr");
+
+                for (var i = 0; i < rows.length; i++) {
+                    var row = [], cols = rows[i].querySelectorAll("td, th");
+
+                    for (var j = 0; j < cols.length; j++) {
+                        var cellText = cols[j].innerText;
+                        cellText = '"' + cellText.replace(/"/g, '""') + '"';
+                        row.push(cellText);
+                    }
+
+                    csv.push(row.join(","));
+                }
+
+                downloadCSV(csv.join("\n"), filename);
+            }
+        </script>
+    </body>
+    </html>
+    
